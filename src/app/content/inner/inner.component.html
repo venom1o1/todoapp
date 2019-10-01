@@ -2,12 +2,14 @@
 <div id="input1">
     <br><br>
     <form action="">
-            <mat-form-field class="example-full-width">
-                    <input id="item" matInput placeholder="ADD TASK" #newTodo  />
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>ADD TASK</mat-label>  
+                <input id="item" matInput placeholder="ADD TASK" #newTodo  />
                   </mat-form-field>
-       &nbsp; <button mat-icon-button color="primary" (click)="addTodo(newTodo.value); newTodo.value=''">ADD</button>
+       &nbsp; <button mat-raised-button  (click)="addTodo(newTodo.value); newTodo.value=''">ADD</button>
     </form>
 </div>
+
 <br><br>
 <div id="disp"> 
         <table id="" >
@@ -23,7 +25,7 @@
                         <td>{{todo.priority}}</td>
                         <td>{{todo.done ? '&#10003;' : '&#10005;' }}</td>
                         <td>
-                                <button mat-raised-button  (click)="deleteTodo(todo)">delete</button>
+                                <button mat-raised-button (click)="deleteTodo(todo)">delete</button>
                         </td>
                 </tr>
         </table>
