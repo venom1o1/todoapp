@@ -1,0 +1,30 @@
+
+<div id="input1">
+    <br><br>
+    <form action="">
+            <mat-form-field class="example-full-width">
+                    <input id="item" matInput placeholder="ADD TASK" #newTodo  />
+                  </mat-form-field>
+       &nbsp; <button mat-icon-button color="primary" (click)="addTodo(newTodo.value); newTodo.value=''">ADD</button>
+    </form>
+</div>
+<br><br>
+<div id="disp"> 
+        <table id="" >
+                
+                <tr>
+                        <th><u> <h3>TASKS &emsp;  </h3></u></th>
+                        <th><u> <h3>PRIORITY &emsp;  </h3></u></th>
+                        <th><u> <h3>COMPLETED?&emsp; </h3></u></th>
+                        <th><u> <h3>REMOVE &emsp; </h3></u></th>
+                </tr>
+                <tr *ngFor="let todo of todos">
+                        <td>{{todo.label}}</td>
+                        <td>{{todo.priority}}</td>
+                        <td>{{todo.done ? '&#10003;' : '&#10005;' }}</td>
+                        <td>
+                                <button mat-raised-button  (click)="deleteTodo(todo)">delete</button>
+                        </td>
+                </tr>
+        </table>
+</div>
